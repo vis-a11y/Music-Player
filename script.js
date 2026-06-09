@@ -2,7 +2,7 @@ const songs = [
     {
         title: "Kachaudi Gali",
         artist: "Rekha Bhardwaj, Utpal Udit",
-        src: "C:\Users\vishal prajapati\Downloads\Kachaudi_Gali_Coke_Studio_Bharat.mp3",
+        src: "songs/Kachaudi_Gali_Coke_Studio_Bharat.mp3",
         cover: "https://www.musiculture.in/wp-content/uploads/2023/02/Coke-Studio-806x800.jpeg"
     },
     {
