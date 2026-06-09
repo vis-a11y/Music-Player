@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-#playlist::-webkit-scrollbar{
-    display: none;
-}
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
+}
+
+html,body{
+    width: 100%;
+    
 }
 
 body{
@@ -17,7 +18,6 @@ body{
     justify-content:center;
     align-items:center;
     padding:20px;
-
     background-image:url("https://static.vecteezy.com/system/resources/previews/000/962/815/original/abstract-background-with-colorful-and-modern-style-vector.jpg");
     background-size:cover;
     background-position:center;
@@ -31,21 +31,14 @@ body{
 .player{
     width:420px;
     padding:30px;
-
     background:rgba(255,255,255,0.08);
-
     backdrop-filter:blur(15px);
     -webkit-backdrop-filter:blur(15px);
-
     border-radius:25px;
-
     border:1px solid rgba(255,255,255,0.1);
-
     box-shadow:
     0 10px 30px rgba(0,0,0,0.35);
-
     color:white;
-
     background-image:url("https://img.freepik.com/premium-photo/abstract-background-design-images_925376-40021.jpg");
     background-size:cover;
     background-position:center;
@@ -68,34 +61,30 @@ h2{
     width:250px;
     height:250px;
     margin:0 auto 20px;
-    border-radius:100%;
+    border-radius:50%;
     overflow:hidden;
-    
     box-shadow:
     0 10px 25px rgba(0,0,0,0.4);
+    border:5px solid rgba(255,255,255,0.15);
 }
 
 .cover img{
     width:100%;
     height:100%;
     object-fit:cover;
-    border-radius:100%;
-    
-    
+    border-radius:50%;
 }
 
-/* Rotation Animation */
+/* Rotate while playing */
 
 .playing{
     animation:spin 8s linear infinite;
 }
 
 @keyframes spin{
-
     from{
         transform:rotate(0deg);
     }
-
     to{
         transform:rotate(360deg);
     }
@@ -103,7 +92,7 @@ h2{
 
 /* 
    SONG INFO
- */
+*/
 
 .song-info{
     text-align:center;
@@ -118,6 +107,7 @@ h2{
 .song-info p{
     color:#d3d3d3;
     margin-top:5px;
+    font-size:14px;
 }
 
 /* 
@@ -127,78 +117,87 @@ h2{
 .time{
     display:flex;
     justify-content:space-between;
-    margin-bottom:10px;
-    color:#d0d0d0;
     font-size:13px;
+    color:#d0d0d0;
+    margin-bottom:10px;
 }
 
 /* 
    PROGRESS BAR
-*/
+ */
 
-#progress-container{
+ .slider-container{
+    width: 100%;
+ }
+#progress{
     width:100%;
-    height:10px;
-    background:rgba(255,255,255,0.18);
+    height:6px;
+    background:
+    rgba(255,255,255,0.2);
     border-radius:20px;
     position:relative;
     cursor:pointer;
-    margin-bottom:12px;
-    overflow:hidden;
+    margin-bottom:25px;
 }
 
-#progress-fill{
-    position:absolute;
-    left:0;
-    top:0;
+
+
+#progress{
+    width:100%;
     height:100%;
-    width:0%;
-    background:linear-gradient(90deg,#1db954,#19a14a);
+    background:#1db954;
     border-radius:20px;
-    transition:width 0.08s linear;
+    position:relative;
+    transition:width .1s linear;
 }
 
-/* small circular handle at the end */
-#progress-fill::after{
-    content:'';
+#progress::after{
+    content:"";
     position:absolute;
-    right:0;
+    right:-8px;
     top:50%;
-    transform:translate(50%,-50%);
+    transform:
+    translateY(-50%);
     width:16px;
     height:16px;
     border-radius:50%;
-    background:#ff2d20;
-    box-shadow:0 2px 6px rgba(0,0,0,0.4);
+    background:white;
+    opacity:0;
+    transition:.2s;
 }
 
-/* ==========================
+#progress-container:hover
+#progress::after{
+    opacity:1;
+}
+
+/* 
    CONTROLS
-========================== */
+ */
 
 .controls{
     display:flex;
     justify-content:center;
     align-items:center;
     gap:20px;
-
-    margin:30px 0;
+    margin:25px 0;
 }
 
 .controls button{
     border:none;
     cursor:pointer;
-    transition:0.3s;
+    transition:.3s;
 }
 
-/* Previous & Next */
+/* Prev Next */
 
 #prev,
 #next{
     width:55px;
     height:55px;
     border-radius:50%;
-    background:rgba(255,255,255,0.15);
+    background:
+    rgba(255,255,255,0.15);
     color:white;
     font-size:22px;
 }
@@ -206,10 +205,11 @@ h2{
 #prev:hover,
 #next:hover{
     transform:scale(1.1);
-    background:rgba(255,255,255,0.25);
+    background:
+    rgba(255,255,255,0.25);
 }
 
-/* Play Button */
+/* Play */
 
 #play{
     width:75px;
@@ -219,60 +219,60 @@ h2{
     color:white;
     font-size:28px;
     box-shadow:
-    0 0 20px rgba(29,185,84,0.5);
+    0 0 20px
+    rgba(29,185,84,0.5);
 }
 
 #play:hover{
     transform:scale(1.08);
 }
 
-/* VOLUME
- */
+/* 
+   VOLUME
+*/
 
 .volume-section{
     display:flex;
     align-items:center;
     gap:10px;
-    margin-bottom:25px;
-   
+    margin-bottom:20px;
 }
 
 .volume-section label{
     font-size:20px;
-    
-}
-
-#volume{
-    flex:1;
-    appearance:none;
-    height:6px;
-    border-radius:20px;
-    background:white;
     width: 100%;
 }
 
+#volume{
+    width:100%;
+    height:100%;
+    background:#1db954;
+    border-radius:20px;
+    position:relative;
+    transition:width .1s linear;
+}
+
 #volume::-webkit-slider-runnable-track{
-    background:white;
     height:6px;
     border-radius:20px;
 }
 
-#volume::-webkit-slider-thumb {
+#volume::-webkit-slider-thumb{
     appearance:none;
-    width:18px;
-    height:18px;
-    background:#ff2d20;
+    width:16px;
+    height:16px;
     border-radius:50%;
+    background:#43a84c;
     cursor:pointer;
-    margin-top:-6px;
+    margin-top:-5px;
 }
 
 #volume::-moz-range-thumb{
-    width:18px;
-    height:18px;
-    background:#ff2d20;
+    width:16px;
+    height:16px;
     border:none;
     border-radius:50%;
+    background:#0fad34;
     cursor:pointer;
 }
 
@@ -287,42 +287,33 @@ h2{
 
 #playlist{
     list-style:none;
-
     max-height:220px;
-
     overflow-y:auto;
 }
 
-/* Scrollbar */
+/* Hide Scrollbar */
 
 #playlist::-webkit-scrollbar{
-    width:6px;
-}
-
-#playlist::-webkit-scrollbar-thumb{
-    background:#1db954;
-    border-radius:10px;
+    display:none;
 }
 
 /* Playlist Item */
 
 #playlist li{
     padding:12px;
-
     border-radius:12px;
-
     margin-bottom:8px;
-
     cursor:pointer;
-
-    transition:0.3s;
-
-    background:rgba(255,255,255,0.05);
+    transition:.3s;
+    background:
+    rgba(255,255,255,0.05);
 }
 
 #playlist li:hover{
-    background:rgba(255,255,255,0.15);
-    transform:translateX(5px);
+    background:
+    rgba(255,255,255,0.15);
+    transform:
+    translateX(5px);
 }
 
 /* Active Song */
@@ -333,9 +324,9 @@ h2{
     font-weight:600;
 }
 
-
-   /* RESPONSIVE */
-
+/* 
+   RESPONSIVE
+*/
 
 @media(max-width:500px){
 
@@ -357,5 +348,11 @@ h2{
         width:65px;
         height:65px;
         font-size:24px;
+    }
+
+    #prev,
+    #next{
+        width:50px;
+        height:50px;
     }
 }
