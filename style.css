@@ -144,40 +144,46 @@ h2{
    PROGRESS BAR
  */
 
- .slider-container{
-    width: 100%;
-    grid-column: 2;
-    grid-row: 4;
- }
+ .slider-container{ 
+    width: 100%; 
+}
 
-#progress{
-    -webkit-appearance: none;
-    appearance: none;
-    width:100%;
+#progress{ 
+    width:100%; 
     height:6px;
-    background:rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.2);
     border-radius:20px;
-    cursor:pointer;
-    margin-bottom:5px;
+    position:relative; 
+    cursor:pointer; 
+    margin-bottom:25px; 
+} 
+
+#progress{ 
+    width:100%; 
+    height:100%; 
+    background:#1db954; 
+    border-radius:20px; 
+    position:relative; 
+    transition:width .1s linear; 
 }
 
-#progress::-webkit-slider-thumb{
-    -webkit-appearance:none;
-    appearance:none;
-    width:16px;
-    height:16px;
-    border-radius:50%;
-    background:white;
-    cursor:pointer;
-}
-
-#progress::-moz-range-thumb{
-    width:16px;
-    height:16px;
-    border:none;
-    border-radius:50%;
-    background:white;
-    cursor:pointer;
+#progress::after{
+    content:"";
+    position:absolute; 
+    right:-8px; 
+    top:50%; 
+    transform: translateY(-50%);
+    width:16px; 
+    height:16px; 
+    border-radius:50%; 
+    background:rgb(15, 212, 68); 
+    opacity:0; 
+    transition:.2s;
+} 
+   
+#progress-container:hover
+#progress::after{
+    opacity:1;
 }
 
 /* 
