@@ -6,17 +6,11 @@ const songs = [
         cover: "https://www.musiculture.in/wp-content/uploads/2023/02/Coke-Studio-806x800.jpeg"
     },
     {
-        title: "Blinding Lights",
-        artist: "The Weeknd",
+        title: " mat kar maya ko ahankar ",
+        artist: "Kabir Cafe",
         src: "songs/song2.mp3",
-        cover: "https://i.pinimg.com/originals/49/47/ea/4947ea4f2af69d22b21411506d2eddf8.jpg"
+        cover: "https://images.genius.com/c9089267cb91d72df34768e3e9e57ac6.1000x1000x1.jpg"
     },
-    {
-        title: "Perfect",
-        artist: "Ed Sheeran",
-        src: "songs/song3.mp3",
-        cover: "images/cover3.jpg"
-    }
 ];
 
 const audio = document.getElementById("audio");
