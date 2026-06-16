@@ -9,7 +9,7 @@
 
 **A sleek, responsive, and fully functional web-based music player built entirely with HTML, CSS, and Vanilla JavaScript.**
 
-[🌐 Live Demo](#) · [🐛 Report Bug](https://github.com/your-username/Music-Player/issues) · [✨ Request Feature](https://github.com/your-username/Music-Player/issues)
+[🌐 Live Demo](https://vis-a11y.github.io/Music-Player/) · 
 
 </div>
 
